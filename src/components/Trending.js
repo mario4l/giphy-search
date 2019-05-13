@@ -39,24 +39,26 @@ class TrendingTwo extends React.Component {
     return (
       <div>
         <h2 style={{ marginBottom: "20px" }}>Popular GIFs of the week</h2>
-        <button
-          onClick={this.remainingGifs}
-          className="ui right floated button"
-          style={{ marginTop: "20px", color: "black" }}
-        >
-          <i className="chevron right icon" />
-        </button>
-        <button
-          onClick={this.initialGifs}
-          className="ui left floated button"
-          style={{ marginTop: "20px", color: "black" }}
-        >
-          <i className="chevron left icon" />
-        </button>
-        <div className="ui grid" style={{ marginTop: "20px" }}>
+        <div className="ui two top attached buttons">
+          <button
+            onClick={this.initialGifs}
+            className="ui button"
+            style={{ marginTop: "20px", color: "black" }}
+          >
+            <i className="chevron left icon" />
+          </button>
+          <button
+            onClick={this.remainingGifs}
+            className="ui button"
+            style={{ marginTop: "20px", color: "black" }}
+          >
+            <i className="chevron right icon" />
+          </button>
+        </div>
+        <div className="ui equal width grid" style={{ marginTop: "20px" }}>
           {this.state.firstGifs.map(item => {
             return (
-              <div className="two wide" key={item}>
+              <div className="column" key={item}>
                 <a href={item}>
                   <img
                     style={{ maxWidth: "100px" }}
@@ -68,10 +70,10 @@ class TrendingTwo extends React.Component {
             );
           })}
         </div>
-        <div className="ui grid" style={{ marginTop: "20px" }}>
+        <div className="ui equal width grid" style={{ marginTop: "20px" }}>
           {this.state.lastGifs.map(item => {
             return (
-              <div className="two wide" key={item}>
+              <div className="column" key={item}>
                 <a href={item}>
                   <img
                     style={{ maxWidth: "100px" }}
